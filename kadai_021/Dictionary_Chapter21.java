@@ -9,7 +9,7 @@ public class Dictionary_Chapter21 {
 	
 	//コンストラクタ
 	
-	public Dictionary_Chapter21() {
+	public void fruitDic() {
 	
 	dictionary.put("apple","りんご");
 	dictionary.put("peach","桃");
@@ -27,24 +27,19 @@ public class Dictionary_Chapter21 {
 	
 	
 	public void seach(String[] fruit) {
-		
-	
-	System.out.println("appleの意味は" + dictionary.get("apple"));
-	System.out.println("bananaの意味は" + dictionary.get("banana"));
-	System.out.println("grapeの意味は" + dictionary.get("grape"));
-	
-	
-	String orangeMean = dictionary.get("orange");
-	if (orangeMean == null) {
-		System.out.println("orangeは辞書に存在しません");
-	}
-	else {
-		System.out.println("orangeの意味は" + orangeMean);
-	}
-		
+		 for (String word : fruit) {
+	            // 検索語が辞書に含まれているかチェック
+	            if (dictionary.containsKey(word)) {
+	                // 含まれている場合、その意味を表示
+	                String meaning = dictionary.get(word);
+	                System.out.println(word + "の意味は " + meaning + " です。");
+	            } else {
+	                // 含まれていない場合、その旨を表示
+	                System.out.println(word + "は辞書に含まれていません。");
+	            }
+		 }
 	
 	}
-	
 	
  
 }
